@@ -6,16 +6,60 @@ body {
     line-height: 1.5;
 }
 
+h1,
+h2,
+h3,
+p {
+    margin: 0;
+}
+
 a {
     text-decoration: none;
 }
 
 ul {
     list-style-type: none;
+    margin: 0;
+    padding-left: 0;
 }
 
+img {
+    display: block;
+    width: 100%;
+}
+
+.section {
+    padding-top: 120px;
+    padding-bottom: 120px;
+    margin: 0%;
+}
+
+.container {
+    max-width: 1158px;
+    margin: 0 auto;
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+
+/* Header. Logo+navigation */
+
 .page-header {
+    border-bottom: 1px solid #E7E9FC;
+}
+
+.page-header-container {
     background: #FFF;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.page-header-nav {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
 }
 
 .logo-web {
@@ -26,6 +70,7 @@ ul {
     line-height: 1.17;
     letter-spacing: 0.54px;
     text-transform: uppercase;
+    margin-right: 76px;
 }
 
 .logo-studio-header {
@@ -38,11 +83,20 @@ ul {
     text-transform: uppercase;
 }
 
+.page-header-nav-links {
+    display: flex;
+    flex-direction: row;
+    gap: 40px;
+}
+
 .page-header-nav-links-item {
     color: #2E2F42;
     font-size: 16px;
     font-weight: 500;
     letter-spacing: 0.32px;
+    display: block;
+    padding-top: 24px;
+    padding-bottom: 24px;
 }
 
 .page-header-nav-links-item:hover {
@@ -55,6 +109,9 @@ ul {
 
 .page-header-address {
     font-style: normal;
+    display: flex;
+    flex-direction: row;
+    gap: 40px;
 }
 
 .page-header-address-item {
@@ -71,21 +128,28 @@ ul {
     color: #404BBF;
 }
 
-.main-page {
-    background: #2E2F42;
+
+/* Section 1. Heading+button */
+
+.hero {
+    padding: 188px 0;
+    background-color: #2E2F42;
+    margin: 0%;
+    height: 600px;
 }
 
-.main-page-title {
+.hero-title {
     color: #FFF;
-    text-align: center;
     font-size: 56px;
     font-weight: 700;
     line-height: 1.07;
     letter-spacing: 1.12px;
+    max-width: 496px;
+    display: block;
+    margin: 0 auto 48px;
 }
 
-
-.main-page-btn {
+.hero-btn {
     background: #4D5AE5;
     font-family: "Roboto", sans-serif;
     line-height: 1.5;
@@ -93,27 +157,64 @@ ul {
     font-weight: 500;
     letter-spacing: 0.64px;
     cursor: pointer;
+    display: block;
+    margin: 0 auto;
+    min-width: 169px;
+    height: 56px;
+    border: none;
+    border-radius: 4px;
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.15);
 }
 
-.main-page-btn:hover {
+.hero-btn:hover {
     background-color: #404BBF;
 }
 
-.main-page-btn:focus {
+.hero-btn:focus {
     background-color: #404BBF;
 }
 
-.strength-item-title {
+
+/* Section 2. Our strengths */
+
+.visually-hidden {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    border: 0;
+    padding: 0;
+
+    white-space: nowrap;
+    clip-path: inset(100%);
+    clip: rect(0 0 0 0);
+    overflow: hidden;
+}
+
+.strengths-list {
+    display: flex;
+    gap: 24px;
+}
+
+.strength-list-item {
+    width: calc((100% - 72px) / 4);
+}
+
+.strength-list-item-title {
     color: #2E2F42;
     font-size: 20px;
     font-weight: 500;
     line-height: 1.2;
     letter-spacing: 0.02em;
+    margin-bottom: 8px;
 }
 
-.strength-item-text {
+.strength-list-item-text {
     letter-spacing: 0.02em;
 }
+
+
+/* Section 3. Our team */
 
 .team-page {
     background: #F4F4FD;
@@ -127,10 +228,23 @@ ul {
     line-height: 1.11;
     letter-spacing: 0.02em;
     text-transform: capitalize;
+    margin-bottom: 72px;
+}
+
+.team-page-list {
+    display: flex;
+    gap: 24px;
 }
 
 .team-page-list-item {
     background-color: #FFF;
+    width: calc((100% - 72px) / 4);
+    border-radius: 0px 0px 4px 4px;
+    box-shadow: 0px 2px 1px 0px rgba(46, 47, 66, 0.08), 0px 1px 1px 0px rgba(46, 47, 66, 0.16), 0px 1px 6px 0px rgba(46, 47, 66, 0.08);
+}
+
+.team-page-list-item-container {
+    padding: 32px 0;
 }
 
 .team-page-list-item-title {
@@ -139,12 +253,18 @@ ul {
     font-weight: 500;
     line-height: 1.2;
     letter-spacing: 0.02em;
+    text-align: center;
+    margin-bottom: 8px;
 }
 
 .team-page-list-item-text {
     font-size: 16px;
     letter-spacing: 0.02em;
+    text-align: center;
 }
+
+
+/* Section 4. Our Portfolio */
 
 .portfolio-page-title {
     color: #2E2F42;
@@ -154,6 +274,24 @@ ul {
     line-height: 1.11;
     letter-spacing: 0.02em;
     text-transform: capitalize;
+    margin-bottom: 72px;
+}
+
+.portfolio-page-list {
+    display: flex;
+    flex-wrap: wrap;
+    column-gap: 24px;
+    row-gap: 48px;
+}
+
+.portfolio-page-list-item {
+    width: calc((100% - 48px) / 3);
+}
+
+.portfolio-page-list-item-container {
+    padding: 32px 16px;
+    border: 1px solid #e7e9fc;
+    border-top: none;
 }
 
 .portfolio-page-list-item-title {
@@ -162,18 +300,28 @@ ul {
     font-weight: 500;
     line-height: 1.2;
     letter-spacing: 0.02em;
+    margin-bottom: 8px;
 }
 
 .portfolio-page-list-item-text {
     letter-spacing: 0.02em;
 }
 
+
+/* Footer */
+
 .page-footer {
     background: #2E2F42;
+    padding: 100px 0;
+}
+
+.logo-web-footer {
+    display: inline-block;
+    margin-bottom: 16px;
 }
 
 .logo-studio-footer {
-    color: #f4f4fd;
+    color: #F4F4FD;
     font-family: "Raleway", sans-serif;
     font-size: 18px;
     font-weight: 700;
@@ -185,6 +333,8 @@ ul {
 .page-footer-text {
     color: #F4F4FD;
     font-size: 16px;
-    line-height: 1.5;
-    letter-spacing: 0.02em;
+    line-height: 24px;
+    font-weight: 400;
+    letter-spacing: 0.32px;
+    max-width: 264px;
 }
